@@ -1,0 +1,148 @@
+# DRAFT data model for the WSG Evaluation Report Tool
+# Status: draft-1. To be emitted as JSON Schema (report-schema.json,
+# finding-schema.json, evidence-schema.json) once approved.
+# Design notes:
+#   - Findings attach to WSG Success Criteria, not guidelines. Guideline,
+#     section, and full-spec summaries are computed roll-ups per WSG 1.4.
+#   - testability_level and result_status are orthogonal axes. Both required.
+#   - Every finding requires at least one evidence object with provenance.
+#   - sensitivity flag included now so post-MVP redaction needs no migration.
+
+report:
+  schema_version: "0.1.0-draft"
+  id: string            # uuid
+  title: string
+  wsg_version: string   # dated snapshot, e.g. "2026-05-21-dnote"
+  star_version: string          # required; STAR is the content/methodology source and is itself a dated draft
+  created: date-time
+  last_updated: date-time
+  status: enum [draft, in-review, final, reopened]
+  subject:
+    name: string
+    type: enum [website, application, digital-service, digital-estate]
+    organization: string
+    urls: [string]
+  evaluator:
+    name: string
+    organization: string | null
+    contact: string | null
+  scope:
+    domains: [string]
+    urls: [string]
+    sitemaps: [string]
+    user_journeys: [string]
+    languages: [string]
+    devices: [string]
+    browsers: [string]
+    exclusions: [string]
+    time_period:
+      start: date
+      end: date
+  methodology:
+    description: string          # references STAR
+    tools_used:
+      - name: string
+        version: string
+        role: string
+    automated_coverage_note: string
+    manual_coverage_note: string
+    organizational_evidence_note: string
+  findings: [finding]
+  summaries:                     # computed, never hand-entered
+    by_guideline: computed
+    by_section: computed         # UX, web-development, hosting-infrastructure, business-product
+    ppp: computed                # planet / people / prosperity rollup
+  narrative:
+    top_risks: [string]
+    top_opportunities: [string]
+    unresolved_questions: [string]
+    required_follow_up: [string]
+    remediation_roadmap: string
+  conformance_language_policy_ack: true   # renderer refuses to emit report without it
+
+finding:
+  id: string                      # uuid
+  wsg_ref: string                 # success criterion id, e.g. "UX11-2"
+  wsg_guideline: string           # e.g. "2.11"
+  wsg_title: string
+  wsg_section: enum [ux-design, web-development, hosting-infrastructure, business-product]
+  ppp: [enum [planet, people, prosperity]]
+  testability_level: enum
+    - automatically-tested
+    - partially-automated
+    - manual-review-required
+    - organizational-evidence-required
+    - not-evaluated
+    - not-applicable
+    - cannot-determine
+  result_status: enum
+    - pass
+    - needs-improvement
+    - fail
+    - not-applicable
+    - not-tested
+    - cannot-determine
+    - requires-organizational-evidence
+  evaluation_method: string
+  evidence: [evidence]            # minItems: 1 unless result_status is not-tested/not-applicable
+  affected_urls: [string]
+  severity: enum [critical, serious, moderate, minor, none] | null
+  impact: string | null
+  confidence: enum [high, medium, low]
+  remediation_recommendation: string | null
+  owner: string | null
+  remediation_status: enum [open, planned, in-progress, resolved, wont-fix] | null
+  reviewer: string | null
+  review_date: date | null
+  notes: string | null
+  related_standards: [string]     # e.g. WCAG SC, GR491, GRI refs
+  related_issue_url: string | null
+  sensitivity: enum [public, internal, restricted]   # default public
+  last_updated: date-time
+  modified_after_import: boolean  # true if evaluator edited an imported finding
+
+evidence:
+  # discriminated union on `kind`
+  kind: enum [automated, manual, organizational]
+  summary: string
+  confidence: enum [high, medium, low]
+  automated:                      # required when kind == automated
+    tool_name: string
+    tool_version: string
+    scan_datetime: date-time
+    scan_configuration: object    # free-form, preserved verbatim from importer
+    url_tested: string
+    raw_result: object            # the raw metric/finding, untouched
+    mapping_id: string            # entry in automated-check-map.json
+    mapping_version: string
+    importer_version: string
+  manual:                         # required when kind == manual
+    evaluator: string
+    review_date: date
+    method: string
+  organizational:                 # required when kind == organizational
+    document_name: string
+    document_owner: string
+    document_date: date
+    review_date: date
+
+automated_check_map_entry:
+  id: string
+  wsg_ref: string
+  wsg_title: string
+  test_name: string
+  test_category: string
+  star_technique: string | null   # STAR technique/test reference; null requires rationale
+  star_absence_rationale: string | null
+  automation_level: enum [automatically-tested, partially-automated]
+  evidence_required: string
+  tool_source: string             # e.g. vital-core, lighthouse
+  scoring_method: string
+  false_positive_risks: string    # mandatory, non-empty
+  false_negative_risks: string    # mandatory, non-empty
+  remediation_guidance: string
+  advisory_or_blocking: enum [advisory, blocking]
+  human_review_required: boolean
+  draft: boolean                  # true until reviewed per GOVERNANCE.md
+  wsg_version: string
+  map_version: string

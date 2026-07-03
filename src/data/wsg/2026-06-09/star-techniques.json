@@ -1,0 +1,2771 @@
+{
+ "snapshot_date": "2026-06-09",
+ "techniques": [
+  {
+   "id": "impact-analysis",
+   "section": 2,
+   "title": "Produce a list of factors to monitor for sustainability impacts",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Identify all machine-generated factors (hardware/software, etc).",
+       "2": "Identify all human-generated factors (business/user, etc).",
+       "3": "Create a checklist to be published within sustainability processes.",
+       "4": "Circulate among employees as part of the testing workflow.",
+       "5": "Check that all factors have been accounted for before publication.",
+       "6": "Report the findings within your sustainability statement."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/impact-analysis.html"
+  },
+  {
+   "id": "external-impact",
+   "section": 2,
+   "title": "Use third-party APIs to measure any passive external impact",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Identify providers who will offer transparent PPP measurements.",
+       "2": "Check the impact of utilization of third-party APIs (if possible).",
+       "3": "Check the impact of non-users or passive users affected by your service.",
+       "4": "Check that impacted users are accounted for in compliance checks.",
+       "5": "Report the findings within your sustainability statement."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/external-impact.html"
+  },
+  {
+   "id": "audience-evaluation",
+   "section": 2,
+   "title": "Use quantitative research to measure the needs of users and affected communities",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.2"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check to see if deliverables require internal access (if so, permission is given).",
+       "2": "Gather metrics data through browser APIs, analytics, or third-party software.",
+       "3": "Identify resolvable factors that are causing PPP issues.",
+       "4": "Once validated as accurate, test further using non-machine testable qualitative methods such as A/B measurement or feedback forms."
+      }
+     ],
+     "expectedResults": "If #1, #2 and #3 above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/audience-evaluation.html"
+  },
+  {
+   "id": "barriers-and-access",
+   "section": 2,
+   "title": "Test against specific disability profiles for more calibrated accessibility",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.2"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Identify users or individuals with disabilities who can help you become more accessible.",
+       "2": "Create testable profiles from symptom/issue lists that cause issues.",
+       "3": "Check that potential solutions do not interfere with existing functionality.",
+       "4": "Create and implement newly calibrated accessibility features.",
+       "5": "Check that the features work as implemented against all existing functionality.",
+       "6": "Report the findings within your accessibility statement."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/barriers-and-access.html"
+  },
+  {
+   "id": "efficient-paths",
+   "section": 2,
+   "title": "Measure interaction cost to reach every page in the information architecture",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.4"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the information architecture has been designed with clarity in mind.",
+       "2": "Check the page for identifiable way-finding processes along a route such as breadcrumbs and landing regions/page patterns.",
+       "3": "Check that the number of choices for each action does not exceed a set amount.",
+       "4": "Check that every action is well documented and that the expected action occurs.",
+       "5": "Check the user flow path for achieving set goals and optimize with shortcuts if necessary."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/efficient-paths.html"
+  },
+  {
+   "id": "human-readable-sitemaps",
+   "section": 2,
+   "title": "Provide a human-readable sitemap to improve the information architecture",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.4"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for a sitemap.xml file in the base directory of a website.",
+       "2": "Check that the markup of the file is semantically correct.",
+       "3": "Check that all of the links held within do not produce any errors.",
+       "4": "Check for the existence of a publicly visible HTML sitemap.",
+       "5": "Check that the file exists alongside a sitemap.xml format.",
+       "6": "Check that the HTML sitemap is semantically correct."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/human-readable-sitemaps.html"
+  },
+  {
+   "id": "respect-user-attention",
+   "section": 2,
+   "title": "Request permission for invasive access to interact with content",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check which permissions from the available APIs are being granted.",
+       "2": "Check if products or services have unsubscribe/account freezing and removal options.",
+       "3": "Check if cookies are used and if so, if notifications are triggered appropriately (with the option to disable all).",
+       "4": "Check if applications plug-in functionality and allow for customization."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/respect-user-attention.html"
+  },
+  {
+   "id": "distraction-free-design",
+   "section": 2,
+   "title": "Encourage features that help users achieve tasks",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for read it later compatibility within articles.",
+       "2": "Check for purchasable products and the option to quickly purchase (bonus points if no login is required).",
+       "3": "Check if the HTML head contains landmark links of relevance to be identified.",
+       "4": "Check for recognized landmark shortcuts (skip links, etc) and that they are functional.",
+       "5": "Check the page's content to ensure none is clipped by other materials or an overflow issue (with a scrollbar lacking).",
+       "6": "Check that all links and buttons are functioning.",
+       "7": "Check that progressive disclosing content only appears when requested and is compatible with user's browsers.",
+       "8": "Check that progressive disclosure is used appropriately with your content or tasks to perform.",
+       "9": "Check that CSS and JavaScript overlays, custom scrollbars and cursors, popup events, and new window opening triggers are not actioned without user consent.",
+       "10": "Check that decorative features, and interactive media, images, or animation can be disabled at the user's request."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/distraction-free-design.html"
+  },
+  {
+   "id": "remove-engagement-traps",
+   "section": 2,
+   "title": "Avoid mechanisms that promote excessive screen time",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if infinite scrolling is being used through pagination landmark links.",
+       "2": "Check for recognized attention-keeping patterns that obscure content."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/remove-engagement-traps.html"
+  },
+  {
+   "id": "deceptive-design-patterns",
+   "section": 2,
+   "title": "Eliminate deceptive design patterns or manipulative techniques",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for bad practices such as those mentioned in the examples.",
+       "2": "Check against a library of [deceptive design](https://www.deceptive.design/) patterns."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/deceptive-design-patterns.html"
+  },
+  {
+   "id": "analytics-and-tracking",
+   "section": 2,
+   "title": "Determine if analytics can be sustainably improved or removed",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check to determine if an analytics script is being used within the page.",
+       "2": "Check against a list of suppliers of software to determine viable alternatives.",
+       "3": "Check to determine if data being gathered complies with GDPR and other privacy legislation.",
+       "4": "If no viable alternative exists and it still performs poorly, recommend removal."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/analytics-and-tracking.html"
+  },
+  {
+   "id": "search-engine-optimization",
+   "section": 2,
+   "title": "Eliminate any manipulative SEO techniques from your source code",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for the keywords META tag and recommend its removal.",
+       "2": "Check for the refresh META tag and recommend replacement with a page redirect header.",
+       "3": "Check for hidden content as identified in the above example and promote visibility or removal.",
+       "4": "Check for duplicate content and flag it for removal."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/search-engine-optimization.html"
+  },
+  {
+   "id": "deliverables-reusability",
+   "section": 2,
+   "title": "Provide deliverables in reusable, self-isolated components",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.7"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check to see if deliverables require internal access (if so, permission is given).",
+       "2": "Check to determine if these deliverables are housed in an open source environment.",
+       "3": "Check projects for multiple CSS files (or use of @imports).",
+       "4": "Check JavaScript for the use of imports or self-isolating functions.",
+       "5": "Check documentation for section separation as markdown files."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/deliverables-reusability.html"
+  },
+  {
+   "id": "deliverables-documentation",
+   "section": 2,
+   "title": "Provide documentation to guide the deliverables",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.7"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check to see if deliverables require internal access (if so, permission is given).",
+       "2": "Check that the instructions, manual, or documentation exist.",
+       "3": "If the documentation does not exist, flag a request to produce materials.",
+       "4": "Check for multiple format types such as HTML, PDF, checklists, slideshow, and video.",
+       "5": "Check if complex features could use additional contextual help.",
+       "6": "Check if interactive assistance or instruction should be offered.",
+       "7": "If additional aids would provide sustainability benefits, offer them."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/deliverables-documentation.html"
+  },
+  {
+   "id": "deliverables-readability",
+   "section": 2,
+   "title": "Create code comments to describe the functionality of features",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.7"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for code comments within the source code of pages.",
+       "2": "Check the formatting of comments for conventions such as links, images, and bullets.",
+       "3": "If publicly facing, flag it for removal, if internal access is required or a developer release, keep it in place."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/deliverables-readability.html"
+  },
+  {
+   "id": "design-system",
+   "section": 2,
+   "title": "Implement an up-to-date design system",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.8"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for the implementation of a design system.",
+       "2": "Check what number of categories being monitored.",
+       "3": "Check if the patterns and tokens are being employed.",
+       "4": "Check when the design system was last updated.",
+       "5": "Check for common in-page design patterns or libraries.",
+       "6": "Verify page components and overall design against established conventions.",
+       "7": "Check for and implement solutions for layout flow issues that could be optimized using an established pattern."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/design-system.html"
+  },
+  {
+   "id": "need-for-media",
+   "section": 2,
+   "title": "Remove any functionality that may trigger auto-playing animation",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.9"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for background media and prevent auto-playing upon page load.",
+       "2": "Check that media that is required to play as a function of the product is muted by default.",
+       "3": "Check for audio and video HTML elements and remove any autoplay true events.",
+       "4": "Check for custom audio or video players and flag auto-playing media."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/need-for-media.html"
+  },
+  {
+   "id": "optimized-media",
+   "section": 2,
+   "title": "Optimizing all audio and video assets for speed and compatibility",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.9"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for compression potential against every available audio and video asset.",
+       "2": "Provide optimized solutions if audio or video problems have been detected.",
+       "3": "Check for third-party non-native media player usage and recommend native options (if possible)."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/optimized-media.html"
+  },
+  {
+   "id": "lazy-loading",
+   "section": 2,
+   "title": "Provide facades and lazy-loading for media, animated GIFs, and third-party content",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.9"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for the position of the fold on a range of screen sizes and resolutions consumers use.",
+       "2": "Check for HTML lazy loading attributes against all images falling outside this viewport.",
+       "3": "Check for HTML lazy loading attributes against all images in progressive disclosure boxes.",
+       "4": "Check that no video or audio elements trigger content upon the page load.",
+       "5": "Check that any uses of the GIF extension are not animated by default.",
+       "6": "Check that no impactful third-party content activate upon the page load.",
+       "7": "Check if an in-page \"Lo-Fi\" or \"Eco mode\" option exists, if by choice, recommend by default.",
+       "8": "Check for a low-fidelity/text-only/lightweight subdomain or path.",
+       "9": "Check that the low-fidelity option is an agreed upon percentage lighter than the main website."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/lazy-loading.html"
+  },
+  {
+   "id": "user-controlled-media",
+   "section": 2,
+   "title": "Optimizing all media assets for a variety of different resolutions",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.9"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the video assets are provided in a variety of common resolutions (which can be user-chosen).",
+       "2": "Check for automatic detection and selection of media resolutions.",
+       "3": "Check if clips or trailers are provided to give a shorter overview.",
+       "4": "Check if downloads are provided for repeat viewing."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/user-controlled-media.html"
+  },
+  {
+   "id": "media-management-and-use",
+   "section": 2,
+   "title": "Add details about media impacts to the media management and use policy",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.9"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for media management and use policy existence.",
+       "2": "Check for a section on audio to verify impact coverage.",
+       "3": "Check for a section on video to verify impact coverage.",
+       "4": "Check for a section on media if the above does not exist to verify impact coverage."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/media-management-and-use.html"
+  },
+  {
+   "id": "avoid-overburdening",
+   "section": 2,
+   "title": "Measure and respond to high-intensity animation usage",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check both CSS and JavaScript for animations and calculate the number that exists.",
+       "2": "If too many (based on a justified value) exist, request the removal of the most impactful.",
+       "3": "Check if animation techniques can be replaced by more efficient methods.",
+       "4": "Check individual animations to determine if the CPU or GPU burden on devices is within safe limits."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/avoid-overburdening.html"
+  },
+  {
+   "id": "control-animation",
+   "section": 2,
+   "title": "Include a mechanism to pause or stop page animation",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if the animation has a mechanism to pause or stop animation or effects.",
+       "2": "Check that the buttons load and give a grace period to the animation taking place."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/control-animation.html"
+  },
+  {
+   "id": "pre-installed-typefaces",
+   "section": 2,
+   "title": "Provide accessible mechanisms around symbols in system fonts",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.11"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that system fonts are replaced with accessible emojis.",
+       "2": "Check that emojis are implemented with compatibility in mind."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/pre-installed-typefaces.html"
+  },
+  {
+   "id": "web-font-optimization",
+   "section": 2,
+   "title": "Use modern, efficient custom typefaces within a set limit",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.11"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the number of custom typefaces does not exceed five.",
+       "2": "Check that fonts are preloaded within the head of the HTML document.",
+       "3": "Check that no obsolete font formats are listed (such as EOT, TTF, SVG).",
+       "4": "Check that fonts are only provided using WOFF2 or WOFF as a fallback.",
+       "5": "Check that if a custom font is variable enabled (refer to font a preferred), remove other references (bold, italic, etc)."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/web-font-optimization.html"
+  },
+  {
+   "id": "printing-documents",
+   "section": 2,
+   "title": "Add a print-friendly media query or style sheet",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.13"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the website or application has a print-friendly media query (@print) or style sheet.",
+       "2": "Check that the print CSS makes attribute content and URLs visible",
+       "3": "Check that the print CSS considers content color accuracy and monochrome options",
+       "4": "Check that the print CSS considers paper orientation, color, and size",
+       "5": "Check that the print CSS hides unnecessary structural material"
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/printing-documents.html"
+  },
+  {
+   "id": "optimize-documents",
+   "section": 2,
+   "title": "Optimizing all document assets across a variety of different formats",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.13"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the primary document format is the most browser-compatible.",
+       "2": "Check that more than one format is given if a non-web format is offered for compatibility.",
+       "3": "Check for compression potential against every available document asset.",
+       "4": "Provide optimized solutions if document problems have been detected."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/optimize-documents.html"
+  },
+  {
+   "id": "optimize-delivery",
+   "section": 2,
+   "title": "Provide pre-generated copies of repeat-use physical assets",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.13"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that existing web assets are pre-generated for repeat-use.",
+       "2": "Check code for asset compilation to identify if pre-generation would be better."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/optimize-delivery.html"
+  },
+  {
+   "id": "labels-and-choice",
+   "section": 2,
+   "title": "Provide document details including a URL within a page",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.13"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that document pages do not embed large files (internally or with third-parties).",
+       "2": "Check that document links are clearly described with information about name, format, language, size, and potentially a summary.",
+       "3": "Check for choice options with format and language factors in documents."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/labels-and-choice.html"
+  },
+  {
+   "id": "early-user-testing",
+   "section": 2,
+   "title": "Identify an affected party-focused testing and prototyping policy",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.14"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if a testing policy is both published and publicly visible.",
+       "2": "Check for key policy factors are presented within the text (optional)."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/early-user-testing.html"
+  },
+  {
+   "id": "ongoing-evaluation",
+   "section": 2,
+   "title": "Produce a list of checkpoints to ensure quality control",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.15"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check to see if deliverables require internal access (if so, permission is given).",
+       "2": "Check that the testing regime is available (internally or externally).",
+       "3": "Identify all bug and security tests to perform during the testing process.",
+       "4": "Identify all web performance tests to perform during the testing process.",
+       "5": "Identify all web accessibility tests to perform during the testing process.",
+       "6": "Identify all web sustainability tests to perform during the testing process.",
+       "7": "Report and resolve the findings within your auditing process."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/ongoing-evaluation.html"
+  },
+  {
+   "id": "automated-tests",
+   "section": 2,
+   "title": "Provide active monitoring for issues on a frequent schedule",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.15"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that testing occurs hourly/daily/weekly to be considered active.",
+       "2": "Check that all publicly visible pages are included within the monitoring.",
+       "3": "Check that the facility providing the monitoring meets WSG.",
+       "4": "Check that a report of ongoing listed issues is publicly available until fully resolved.",
+       "5": "Provide resolutions for detected issues within a timely manner."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/automated-tests.html"
+  },
+  {
+   "id": "performance-testing",
+   "section": 2,
+   "title": "Establish performance testing routines with each new release",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.15"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check to see if deliverables require internal access (if so, permission is given).",
+       "2": "Check that the testing regime is available (internally or externally).",
+       "3": "Identify all web performance tests to perform during the testing process.",
+       "4": "Report and resolve the findings within your auditing process."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/performance-testing.html"
+  },
+  {
+   "id": "compatibility-documentation",
+   "section": 2,
+   "title": "Provide a publicly visible compatibility policy or statement",
+   "level": "Advisory",
+   "guideline_refs": [],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for a compatibility policy or statement's existence.",
+       "2": "Check for sections on included and excluded coverage.",
+       "3": "Check that a support method is offered for issues outside of scope."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/compatibility-documentation.html"
+  },
+  {
+   "id": "maintaining-compatibility",
+   "section": 2,
+   "title": "Provide clarification when updates are significant over minor releases",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.17"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for a publicly available change.log or release notes.",
+       "2": "Check that the frequency of updates has not been less than 12 months.",
+       "3": "Check that major releases provide details of breaking features."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/maintaining-compatibility.html"
+  },
+  {
+   "id": "user-constraints",
+   "section": 2,
+   "title": "Establish compatibility testing routines with each new release",
+   "level": "Advisory",
+   "guideline_refs": [
+    "2.17"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check to see if deliverables require internal access (if so, permission is given).",
+       "2": "Check that the testing regime is available (internally or externally).",
+       "3": "Identify all compatibility tests to perform during the testing process.",
+       "4": "Check if additional legal compliance requirements are being met.",
+       "5": "Report and resolve the findings within your auditing process."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/user-constraints.html"
+  },
+  {
+   "id": "performance-goals",
+   "section": 3,
+   "title": "Profile existing projects to identify common factors of value",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the visual spacing of elements is not too cramped.",
+       "2": "Check the scroll length of the document does not exceed a stated length.",
+       "3": "Check the number of DOM nodes in the tree does not exceed a stated number.",
+       "4": "Check the number of HTTP requests does not exceed a stated number.",
+       "5": "Check if optimizing will be beneficial, if so, implement a solution."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/performance-goals.html"
+  },
+  {
+   "id": "energy-intensity",
+   "section": 3,
+   "title": "Calculate the energy intensity of technologies for existing projects",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the energy intensity of the HTML elements and attributes used.",
+       "2": "Check the energy intensity of CSS at-rules, selectors, pseudo's, properties, and Values.",
+       "3": "Check the energy intensity of JavaScript, DOM, CSSOM, and API usage.",
+       "4": "Check the energy intensity of image and media usage."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/energy-intensity.html"
+  },
+  {
+   "id": "minified-code",
+   "section": 3,
+   "title": "Minify your front-end code if it is public facing",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.2"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if your HTML, CSS, and JavaScript can be minified.",
+       "2": "Check if JavaScript can gain size reductions through uglify processes.",
+       "3": "Check if the code is on a non-production public-facing website.",
+       "4": "Check if obfuscation exists, if not minify the source code."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/minified-code.html"
+  },
+  {
+   "id": "code-splitting",
+   "section": 3,
+   "title": "Implement code-splitting where appropriate to reduce payloads",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.3"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the size of packages to determine the benefit of code-splitting.",
+       "2": "Check if CSS would benefit from being split into separate style sheets based on queries.",
+       "3": "Check if JavaScript can be modularized and imported when required.",
+       "4": "Check if obfuscation exists, if not code-split the source code."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/code-splitting.html"
+  },
+  {
+   "id": "remove-redundancy",
+   "section": 3,
+   "title": "Eliminate redundant code through coverage or tree shaking",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.2"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check CSS to determine if redundancy exists within your code.",
+       "2": "Check packages to determine if redundancy exists within JavaScript.",
+       "3": "Check if redundant code may be reintroduced, if not, remove it."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/remove-redundancy.html"
+  },
+  {
+   "id": "organize-code-arrangement",
+   "section": 3,
+   "title": "Write code for performance removing duplication",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.4"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for energy inefficient naming methodologies or patterns in CSS.",
+       "2": "Check for the absence of repeating code (DRY) within CSS.",
+       "3": "Check for duplicate functionality or names within your JavaScript."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/organize-code-arrangement.html"
+  },
+  {
+   "id": "assess-and-reduce",
+   "section": 3,
+   "title": "Determine and decision make upon third-party impacts",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if any third-party components exist within the page or application.",
+       "2": "Check that component against WSG for its sustainability compliance.",
+       "3": "Check if high-impact third-party components offer self-hosted alternatives.",
+       "4": "Check that self-hosted alternatives are used if provided."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/assess-and-reduce.html"
+  },
+  {
+   "id": "third-party-implementation",
+   "section": 3,
+   "title": "Provide an import on interaction delay for third-party resources",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if any third-party components exist within the page or application.",
+       "2": "Check that it exists behind a click-to-load delay screen (that users must request)."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/third-party-implementation.html"
+  },
+  {
+   "id": "self-hosting",
+   "section": 3,
+   "title": "Ensure that content is delivered through the most sustainable pathway",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if the level of content being published is regular.",
+       "2": "Check if features such as comments are a requirement (if so, can moderation be offered).",
+       "3": "Check if the website already has an audience to give content visibility.",
+       "4": "If so, check that the content is self-hosted on the first-party domain."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/self-hosting.html"
+  },
+  {
+   "id": "third-party-preferences",
+   "section": 3,
+   "title": "Provide the ability to identify and choose third-party components to load",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that information is provided to indicate upon load to indicate preferences.",
+       "2": "Check that the option to allow all, deny all, and select between providers is offered.",
+       "3": "Check that information is provided identifying providers and describing the options carefully.",
+       "4": "Check that preferences are remembered when navigating during the session."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/third-party-preferences.html"
+  },
+  {
+   "id": "semantic-code",
+   "section": 3,
+   "title": "Validate source code for semantic accuracy",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if the HTML, CSS, and other source code contains resolvable errors.",
+       "2": "Check that any errors have been successfully linted and corrected."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/semantic-code.html"
+  },
+  {
+   "id": "optional-features",
+   "section": 3,
+   "title": "Eliminate optional code to reduce the rendering impact",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that optional HTML elements that are unnecessary for rendering are removed.",
+       "2": "Check that browser default styles are not repeated in the style sheets."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/optional-features.html"
+  },
+  {
+   "id": "non-standard-code",
+   "section": 3,
+   "title": "Replace non-standard code with suitable alternative syntax",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that archaic proprietary specification additions are not included within the code.",
+       "2": "Check that browser prefixes have been removed from CSS unless required for compatibility.",
+       "3": "Check that no browser hacks exist unless they are required for compatibility."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/non-standard-code.html"
+  },
+  {
+   "id": "custom-code",
+   "section": 3,
+   "title": "Replace code that can instead use more efficient native APIs",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if the benefits of a native browser control exceed creating a custom element.",
+       "2": "Check if a native API exists that could replace custom calls, methods, or functions.",
+       "3": "In either of these instances, if the answer is yes, check that the native option is used."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/custom-code.html"
+  },
+  {
+   "id": "asynchronous-code",
+   "section": 3,
+   "title": "Set scripts to load either asynchronously or deferred",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.7"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that all scripts are set to load with either the async or defer attributes unless necessary.",
+       "2": "Check if CSS ([with the aid of JavaScript](https://www.holisticseo.digital/pagespeed/async-css/)) could benefit from asynchronous loading, and if so, do it."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/asynchronous-code.html"
+  },
+  {
+   "id": "optimized-loading",
+   "section": 3,
+   "title": "Provide assets required at load with the correct delivery route",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.7"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that preload, prefetch, and preconnect are used as appropriate in HTML documents."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/optimized-loading.html"
+  },
+  {
+   "id": "required-elements",
+   "section": 3,
+   "title": "Ensure that the required HTML elements are included",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.8"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the document includes a well-formed DocType.",
+       "2": "Check that the page or application includes the required HTML elements.",
+       "3": "Check that the page or application includes valid links to CSS and JavaScript assets (optional).",
+       "4": "Check that the HTML includes the viewport META element for handheld devices."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/required-elements.html"
+  },
+  {
+   "id": "meta-tags",
+   "section": 3,
+   "title": "Provide relevant metadata using a recognized scheme",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.8"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the HTML document contains a description META element of [between 50 and 150 characters](https://moz.com/learn/seo/meta-description).",
+       "2": "Check that the HTML document contains additional metadata from a recognized scheme.",
+       "3": "Check that the necessary social media metadata exists within the HTML head."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/meta-tags.html"
+  },
+  {
+   "id": "structured-data",
+   "section": 3,
+   "title": "Ensure content is structured using Microdata",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.8"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that content is correctly marked up using microdata, microformats, etc.",
+       "2": "Check for external RDFa assets that may contain rich metadata."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/structured-data.html"
+  },
+  {
+   "id": "media-and-preference-queries",
+   "section": 3,
+   "title": "Ensure CSS preference media queries are correctly applied",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.9"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for preference queries and that the effect they produce is beneficial.",
+       "2": "Check for manual override toggles or preferences within the page.",
+       "3": "Check for alternative styles if paged media or scripting is disabled."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/media-and-preference-queries.html"
+  },
+  {
+   "id": "device-adaptable",
+   "section": 3,
+   "title": "Test against network speeds and visual resolution breakpoints",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the website or application performs well on a variety of network speeds.",
+       "2": "Check that the product or service visually does not break when resized at multiple window sizes."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/device-adaptable.html"
+  },
+  {
+   "id": "progressive-enhancement",
+   "section": 3,
+   "title": "Provide progressive enhancement feature testing within projects",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the website or application can function if JavaScript is disabled.",
+       "2": "Check that the page is still functional if an older browser version with older JavaScript and CSS version is used.",
+       "3": "Check that the product or service is still functional if CSS is disabled.",
+       "4": "Check that the product or service is still functional if images or media are disabled."
+      }
+     ],
+     "expectedResults": "Expectation of the above is dependent on the task but should aim to be true unless necessary."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/progressive-enhancement.html"
+  },
+  {
+   "id": "carbon-aware-design",
+   "section": 3,
+   "title": "Configure your project around carbon-aware situations",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if operations can be built to function using carbon-aware technologies or resources.",
+       "2": "Check if operations can be processed or shifted to occur during less carbon-intensive periods."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/carbon-aware-design.html"
+  },
+  {
+   "id": "alternative-browsing",
+   "section": 3,
+   "title": "Provide low-impact, delayed, or alternate methods of interaction",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for low-impact interaction methods such as QR codes, smartwatch layouts, or voice assistant tooling.",
+       "2": "Check for a speech style sheet for indicators to clarify pronunciation issues.",
+       "3": "Check that your website or application functions correctly in a text-only environment."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/alternative-browsing.html"
+  },
+  {
+   "id": "sustainable-javascript",
+   "section": 3,
+   "title": "Optimize a codebase through rewriting for performance",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.11"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that existing code has been rewritten to be less process intensive, etc.",
+       "2": "Check that any existing tooling is considered sustainable and/or performant.",
+       "3": "Check if JavaScript frameworks can be replaced with others that are more performant.",
+       "4": "If frameworks can be replaced, check that they are replaced."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/sustainable-javascript.html"
+  },
+  {
+   "id": "energy-relevant-apis",
+   "section": 3,
+   "title": "Ensure JavaScript APIs are correctly applied",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.11"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for JavaScript APIs and that the effect they produce is beneficial.",
+       "2": "Check that the API has enough support to be progressively implemented.",
+       "3": "Check that the implementation cost is not greater than the amount it offsets.",
+       "4": "If the API is dependent on third-parties, ensure they are sustainable and resilient."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/energy-relevant-apis.html"
+  },
+  {
+   "id": "dependency-management",
+   "section": 3,
+   "title": "Identify and remove unused packages and dependencies",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.12"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if a package.json has been submitted for identifying packages.",
+       "2": "If so, use that. Otherwise, check the source code for potential orphan references."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/dependency-management.html"
+  },
+  {
+   "id": "dependency-necessity",
+   "section": 3,
+   "title": "Implement modularized or lightweight frameworks and libraries",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.12"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the package size to determine at what size breaking into modular components should occur.",
+       "2": "Check the function sizes to identify if refactoring to smaller functions should also occur.",
+       "3": "Check if CSS libraries could be replaced with smaller alternatives or custom code.",
+       "4": "Check if JavaScript frameworks could be replaced with smaller alternatives or native code.",
+       "5": "If replacements can be made, then replacements should be introduced."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/dependency-necessity.html"
+  },
+  {
+   "id": "dependency-updates",
+   "section": 3,
+   "title": "Ensure that dependencies are verified as up-to-date",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.12"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if a package.json has been submitted for identifying packages.",
+       "2": "If so, use that. Otherwise, check the source code for package version data.",
+       "3": "Check that all packages are at least non-breaking (minor) current if not major release current releases."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/dependency-updates.html"
+  },
+  {
+   "id": "expected-files",
+   "section": 3,
+   "title": "Provide the expected website assets in your base directory",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.13"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the base directory for a favicon in 16×16, 32×32, and 48×48 format.",
+       "2": "Check the base directory for a well-formed robots.txt document.",
+       "3": "Check the base directory for a well-formed opensearch.xml and sitemap.xml file.",
+       "4": "Check the base directory for a well-formed site.webmanifest document.",
+       "5": "Check that the links contained within these documents do not contain errors."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/expected-files.html"
+  },
+  {
+   "id": "beneficial-files",
+   "section": 3,
+   "title": "Provide beneficial plaintext website assets in the expected locations",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.13"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "If you have advertising, check that the base directory contains a well-formed ads.txt document.",
+       "2": "Check that the base directory contains a well-formed security.txt and robots.txt document.",
+       "3": "Check that the base directory contains a well-formed carbon.txt and humans.txt document (optional)."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/beneficial-files.html"
+  },
+  {
+   "id": "appropriate-implementation",
+   "section": 3,
+   "title": "Encourage the use of more sustainable creation toolchains",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.14"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for the tool used for creation and determine its sustainability.",
+       "2": "If it has a low impact, continue. Otherwise, flag for replacement."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/appropriate-implementation.html"
+  },
+  {
+   "id": "extensions-and-plugins",
+   "section": 3,
+   "title": "Test all third-party resources for sustainability impacts",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.14"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if any third-party resources exist within the page or application.",
+       "2": "If internal access is required to verify resource usage, grant it.",
+       "3": "Check that component against WSG for its sustainability compliance.",
+       "4": "Check if high-impact third-party resources offer self-hosted alternatives.",
+       "5": "Check that self-hosted alternatives are used if provided."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/extensions-and-plugins.html"
+  },
+  {
+   "id": "versioning",
+   "section": 3,
+   "title": "Ensure the latest version of a syntax language is being used",
+   "level": "Advisory",
+   "guideline_refs": [
+    "3.15"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the version of a programming language being used is the latest."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/versioning.html"
+  },
+  {
+   "id": "provider-selection",
+   "section": 4,
+   "title": "Publicly disclose relevant sustainability metrics to users",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the provider has made available relevant hosting metrics publicly.",
+       "2": "Check that the PUE, WUE, and CUE are each listed for each data center.",
+       "3": "Check that individual servers provide live CPU, GPU, RAM, and data use tracking.",
+       "4": "Check that logging of past values over time is provided for calculating emissions."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/provider-selection.html"
+  },
+  {
+   "id": "low-carbon-electricity",
+   "section": 4,
+   "title": "Ensure that the project is hosted on a sustainable platform",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the hosting provider has a sustainability statement.",
+       "2": "Check that the hosting is powered by 100% low-carbon energy.",
+       "3": "Check that the hosting platform does not use carbon credits to offset its energy requirements.",
+       "4": "Check for recognized green initiatives that the platform may be subscribed to.",
+       "5": "Check if sustainability-related keywords or claims are made.",
+       "6": "Check that any claims made are verified with supporting evidence."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/low-carbon-electricity.html"
+  },
+  {
+   "id": "domain-names",
+   "section": 4,
+   "title": "Ensure that the project uses a sustainable domain registrar",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the provider has made available relevant impact metrics publicly.",
+       "2": "Account for factors that may affect domain impact (such as number of domains in use).",
+       "3": "Check that logging of past values over time is provided for calculating emissions."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/domain-names.html"
+  },
+  {
+   "id": "caching-resources",
+   "section": 4,
+   "title": "Provide caching responses to optimize page reloads",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.2"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the cache-control header of each file has the correct length set."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/caching-resources.html"
+  },
+  {
+   "id": "offline-access",
+   "section": 4,
+   "title": "Identify the potential for PWAs and other useful features",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.2"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if cookies are in use and, whether they can be added, removed, or replaced.",
+       "2": "Check if local data storage is being used and, whether it can be added, removed, or replaced.",
+       "3": "Check if a PWA or other worker functions are in use and, whether they can be added or removed.",
+       "4": "If a PWA exists, check for a well-formed manifest file, an icon, and semantically correct JavaScript."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/offline-access.html"
+  },
+  {
+   "id": "server-side-compression",
+   "section": 4,
+   "title": "Ensure that files are compressed correctly before serving",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.3"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check all text assets for content-encoding headers to verify compression takes place.",
+       "2": "Check content-encoding headers work for not in-use formats for forward-compatibility efforts.",
+       "3": "Check if the compression method used is the most optimal type available."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/server-side-compression.html"
+  },
+  {
+   "id": "media-compression",
+   "section": 4,
+   "title": "Compress all assets that can be optimized before CMS submission",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.3"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that all assets are optimized for the web in size, format, and quality before publication.",
+       "2": "If assets have been altered prior to publication, check users are pre-warned of any changes.",
+       "3": "Check that the files published are the optimized versions (more than one may be necessary).",
+       "4": "Check if a CMS will be necessary or useful and if so, ensure static assets are uploaded there."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/media-compression.html"
+  },
+  {
+   "id": "error-pages",
+   "section": 4,
+   "title": "Provide custom error pages to handle unexpected events",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.4"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the website or application has a custom set of pages to respond to errors.",
+       "2": "Check that each error status type has its own page and unique situation handling.",
+       "3": "Check that such pages provide signposting to resolve the error they encountered.",
+       "4": "Check that existing links to navigation related pages remain fully functional.",
+       "5": "Check that links to customer support are provided when solutions do not work."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/error-pages.html"
+  },
+  {
+   "id": "redirection",
+   "section": 4,
+   "title": "Resolve all anchor references which trigger errors or redirects",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.4"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that no anchor reference or in-page reference contains links that do not resolve (server errors).",
+       "2": "Check that no anchor reference or in-page reference contains dead (erroneous) links.",
+       "3": "Check that no anchor reference or in-page reference contains redirection links.",
+       "4": "Check that links to external websites do not result in forbidden errors."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/redirection.html"
+  },
+  {
+   "id": "suspicious-activity-management",
+   "section": 4,
+   "title": "Check that pages have not been subjected to hijacking",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check links do not contain abnormalities such as significant or feature-critical external redirections.",
+       "2": "Check pages do not contain tracking, mining, or advertising that has occurred suddenly.",
+       "3": "Check pages do not contain closure, ransom, or hacking notices.",
+       "4": "Check pages do not trigger sudden redirections to other domains.",
+       "5": "Check the domain has not been included within a security firm or Google compromised lists."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/suspicious-activity-management.html"
+  },
+  {
+   "id": "refresh-frequency",
+   "section": 4,
+   "title": "Ensure that stored data has a defined and reasonable expiry date",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.7"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the expiration date of locally stored data and if that date has exceeded, remove the data.",
+       "2": "Check the expiration date of server-side stored data and if that date has elapsed, remove the information.",
+       "3": "If no expiration date exists for client-side or server-side data, either add one or remove the data."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/refresh-frequency.html"
+  },
+  {
+   "id": "Protocol efficiency",
+   "section": 4,
+   "title": "Deliver content using the correct, most secure protocol",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.9"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the product or service is being delivered over HTTPS rather than HTTP.",
+       "2": "Check that alternative protocol usage is only done using secure means."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/Protocol efficiency.html"
+  },
+  {
+   "id": "global-cdns",
+   "section": 4,
+   "title": "Provide distributed access to static resources via a CDN",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if you only serve a local (single country) audience, if so, avoid CDN usage.",
+       "2": "Check using analytics the average distribution of your product or service's users.",
+       "3": "Check the existing location of static resources on the existing website.",
+       "4": "If they exist on the first-party domain, calculate the sustainability value of using a CDN.",
+       "5": "Check a hosting or CDN provider's locations to match as closely to your customers."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/global-cdns.html"
+  },
+  {
+   "id": "sustainability-commitment",
+   "section": 4,
+   "title": "Ensure that the CDN and its chain of locations are sustainable",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if the CDN provider has a sustainability statement in place.",
+       "2": "Check if the CDN provider meets any sustainability compliance obligations.",
+       "3": "Check that CDN against WSG for its sustainability compliance.",
+       "4": "Check that the CDN supply network (nodes) are also as sustainable as the provider."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/sustainability-commitment.html"
+  },
+  {
+   "id": "inappropriate-resources",
+   "section": 4,
+   "title": "Avoid hosting dynamic resources or third-party scripts on the CDN",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that your CDN only contains static website assets.",
+       "2": "Check that JavaScript on CDNs is first-party hosted only."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/inappropriate-resources.html"
+  },
+  {
+   "id": "lifecycle-management",
+   "section": 4,
+   "title": "Provide a review or expiration date on website content",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.12"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that all articles (or content where material may go out-of-date) have a review or expiration date.",
+       "2": "Check that content within the website (or potentially within long articles) can be filtered by classification.",
+       "3": "Check that all classification patterns used on websites are repeated across all pages and clearly labeled."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/lifecycle-management.html"
+  },
+  {
+   "id": "optimized-logging",
+   "section": 4,
+   "title": "Ensure that backup providers are classified as sustainable",
+   "level": "Advisory",
+   "guideline_refs": [
+    "4.12"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if the backup provider has a sustainability statement in place.",
+       "2": "Check if the backup provider meets any sustainability compliance obligations.",
+       "3": "Check that backup provider against WSG for its sustainability compliance."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/optimized-logging.html"
+  },
+  {
+   "id": "public-documents",
+   "section": 5,
+   "title": "Provide a publicly visible sustainability and/or ethical policy statement",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a publicly visible sustainability statement exists.",
+       "2": "Check that a Code of Ethics statement can be located.",
+       "3": "Check that the sustainability statement contains details on PPP reports.",
+       "4": "Check that the sustainability statement has concrete dates planned.",
+       "5": "Check that the sustainability statement details legal compliance.",
+       "6": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/public-documents.html"
+  },
+  {
+   "id": "achievements-and-compliance",
+   "section": 5,
+   "title": "Provide details of any beyond-the-scope sustainability features",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.1"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for any third-party sustainability features beyond WSG scope.",
+       "2": "Check that any such features are met in both guidelines and success criteria.",
+       "3": "Check that no conflicts are caused with existing WSG compliance.",
+       "4": "If conflicts do exist, prioritize WSG unless a higher classification of document exists (law, etc)."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/achievements-and-compliance.html"
+  },
+  {
+   "id": "advocate-for-sustainability",
+   "section": 5,
+   "title": "Check that an employee is assigned as the sustainability representative",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.2"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for a named employee and their contact details on the sustainability statement."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/advocate-for-sustainability.html"
+  },
+  {
+   "id": "active-participation",
+   "section": 5,
+   "title": "Produce awareness raising resources on sustainability",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.3"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the product or service's social media accounts for sustainability hashtag postings.",
+       "2": "Check a product or services blog for sustainability-related postings.",
+       "3": "Check a product or services footer for a sustainability hub or resources area for users."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/active-participation.html"
+  },
+  {
+   "id": "competitor-impact",
+   "section": 5,
+   "title": "Calculate the environmental impact of your competitors",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.5"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check your own product or service against WSG for a baseline score.",
+       "2": "Check competitor websites against WSG to identify where they sit sustainably.",
+       "3": "Check again regularly over time to monitor potential changes that may occur."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/competitor-impact.html"
+  },
+  {
+   "id": "web-sustainability-goals",
+   "section": 5,
+   "title": "Have a clearly defined set of sustainability goals",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.6"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for the existence of a publicly visible sustainability statement.",
+       "2": "Check that a journey or path is provided to introduce the subject.",
+       "3": "Check that current carbon emissions data is provided for context.",
+       "4": "Check that goals over a 1, 2, 5, 10, and beyond year plan are defined.",
+       "5": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/web-sustainability-goals.html"
+  },
+  {
+   "id": "obtaining-verification",
+   "section": 5,
+   "title": "Verify and showcase any third-party sustainability certifications",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.7"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that any certifications are marked up so they can be machine-read.",
+       "2": "Check that any certifications allow for validation to prove the authenticity of ownership.",
+       "3": "Check that all verified certifications are weighted into the sustainability scoring process."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/obtaining-verification.html"
+  },
+  {
+   "id": "policies-and-practices",
+   "section": 5,
+   "title": "Check for any included disclosure reporting policies",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.8"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that the business operates under a disclosure reporting policy."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/policies-and-practices.html"
+  },
+  {
+   "id": "impact-reports",
+   "section": 5,
+   "title": "Include public facing carbon reports on an annual basis",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.8"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a public-facing carbon report is published annually.",
+       "2": "Check if an open format is provided, or as a fallback - PDF format.",
+       "3": "Check that carbon reports are linked to from within a sustainability statement.",
+       "4": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/impact-reports.html"
+  },
+  {
+   "id": "disclosure-reporting",
+   "section": 5,
+   "title": "Check for any compliance related disclosure documentation",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.8"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if a CSRD report has been provided, if so, evaluate the data sustainability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/disclosure-reporting.html"
+  },
+  {
+   "id": "management-and-maintenance",
+   "section": 5,
+   "title": "Provide a product or service maintenance agreement",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.10"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a product or service maintenance agreement exists.",
+       "2": "Check that the content provides coverage for the product or service.",
+       "3": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/management-and-maintenance.html"
+  },
+  {
+   "id": "iterative-consideration",
+   "section": 5,
+   "title": "Identify the iteration record of the website or application",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.11"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if a website or application has a history of being updated.",
+       "2": "Check that the frequency is less than 12 months since the last update.",
+       "3": "Check (if access to a repository is provided) that more minor than major updates occur.",
+       "4": "Check (if access to a repository is provided) that structure-over-style updates occur."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/iterative-consideration.html"
+  },
+  {
+   "id": "feature-changes",
+   "section": 5,
+   "title": "Clearly label changes using a release notes feature",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.11"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a changelog has been provided for each product or service.",
+       "2": "Check that modifications are categorized by the type of change.",
+       "3": "Check that significant changes such as new features are well documented externally.",
+       "4": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/feature-changes.html"
+  },
+  {
+   "id": "sustainable-development-goals",
+   "section": 5,
+   "title": "Align product or service compliance with the SDGs",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.13"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if the product aligns with the SDGs and if not, identify ways to address shortcomings."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/sustainable-development-goals.html"
+  },
+  {
+   "id": "vetting-potential-partners",
+   "section": 5,
+   "title": "Provide a publicly visible and transparent supplier policy",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.14"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a publicly visible supplier policy exists on the website.",
+       "2": "Check that information covering all three aspects of PPP are covered.",
+       "3": "Check that third-party supplier against WSG for sustainability.",
+       "4": "If the supplier has a poor impact record post-testing, reconsider usage.",
+       "5": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/vetting-potential-partners.html"
+  },
+  {
+   "id": "informative-partner-promotion",
+   "section": 5,
+   "title": "Publicly list the sustainability impact of any partnerships",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.14"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that all partnerships of the product or service are listed online.",
+       "2": "Check those partners against public lists of known greenwashers.",
+       "3": "Check those partners against WSG for sustainability conformance.",
+       "4": "If the supplier has a poor impact record post-testing, reconsider usage."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/informative-partner-promotion.html"
+  },
+  {
+   "id": "living-wage",
+   "section": 5,
+   "title": "Ensure that the business is a living wage employer",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.15"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for a listing in the living wage directory or a verifiable declaration.",
+       "2": "Check the jobs page of a product or service to identify listed wages.",
+       "3": "Check those wages against the Living Wage current rates.",
+       "4": "If the wage is not shown or does not match, flag a potential issue."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/living-wage.html"
+  },
+  {
+   "id": "employee-benefits",
+   "section": 5,
+   "title": "Ensure that the business provides benefits for employees",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.15"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check the work, culture, career, and jobs pages for potential benefits.",
+       "2": "Calculate values for such benefits based on their potential usefulness.",
+       "3": "Check if the added value of such benefits is likely to benefit workers."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/employee-benefits.html"
+  },
+  {
+   "id": "data-practices",
+   "section": 5,
+   "title": "Provide links to the privacy policy and relevant legislation",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.18"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a publicly visible privacy policy on the website.",
+       "2": "Check that the privacy policy includes sections on required legislation.",
+       "3": "If in Germany, check that an Impressum document is available.",
+       "4": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/data-practices.html"
+  },
+  {
+   "id": "data-ownership",
+   "section": 5,
+   "title": "Enable users to manage their accounts and data",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.18"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that users can delete their accounts and data without human intervention."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/data-ownership.html"
+  },
+  {
+   "id": "outdated-content",
+   "section": 5,
+   "title": "Provide a website archive containing outdated or old versions",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.18"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check if content exists beyond 5-10 years on the website or application.",
+       "2": "Check if the mentioned content is being accessed rarely rather than regularly.",
+       "3": "Check (if both of the above are true) that a website archive holds this material.",
+       "4": "Check that the mentioned archive is slimmed down to further reduce sustainability impacts."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/outdated-content.html"
+  },
+  {
+   "id": "ai-and-data-collection",
+   "section": 5,
+   "title": "Provide a publicly facing policy around emerging technologies",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.19"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a publicly facing policy exists around emerging technology usage.",
+       "2": "Check (if such technology is used) to what extent and how much of an impact this is causing.",
+       "3": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/ai-and-data-collection.html"
+  },
+  {
+   "id": "fuel-divestment",
+   "section": 5,
+   "title": "Verify all partnerships and sponsors against WSG",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.20"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that all partnerships and sponsors are publicly listed on the website.",
+       "2": "Check that all listings are correctly marked up so they can be machine-read.",
+       "3": "Check that all partnerships and sponsors are vetted against public lists of known greenwashers.",
+       "4": "Check that all partnerships and sponsors are tested against WSG for sustainability.",
+       "5": "If the supplier has a poor impact record post-testing, reconsider usage."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/fuel-divestment.html"
+  },
+  {
+   "id": "philanthropy-policy",
+   "section": 5,
+   "title": "Verify and showcase any third-party sustainability projects",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.21"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that all third-party projects are publicly listed on the website.",
+       "2": "Check that all listings are correctly marked up so they can be machine-read.",
+       "3": "Check that third-party projects are weighted into the sustainability scoring process."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/philanthropy-policy.html"
+  },
+  {
+   "id": "environmental-budget",
+   "section": 5,
+   "title": "Provide a sustainability and environmental budget",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.24"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that any budget information provided by the user is in a valid format.",
+       "2": "Check to see if the user has submitted a JSON budget with predefined labels and values.",
+       "3": "Check that WSG conformance (against success criteria) matches or is lower than the budget."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/environmental-budget.html"
+  },
+  {
+   "id": "performance-budget",
+   "section": 5,
+   "title": "Provide a performance budget for your product or service",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.24"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that any budget information provided by the user is in a valid format.",
+       "2": "Check to see if the user has submitted a JSON budget with predefined labels and values.",
+       "3": "Check that the performance criteria match or is lower than the budget."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/performance-budget.html"
+  },
+  {
+   "id": "measurable-improvements",
+   "section": 5,
+   "title": "Benchmark the improvement in revised budget achievements",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.24"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that any budget information provided by the user is in a valid format.",
+       "2": "Check to see if the user has submitted a JSON budget with predefined labels and values.",
+       "3": "Check the submitted information against previously submitted budgets.",
+       "4": "Check that the new budgets are equal or tighter (smaller) targets than previously.",
+       "5": "Check the website or application's budget analysis data against previous tests.",
+       "6": "Check that the website or application meets budget requirements regularly."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/measurable-improvements.html"
+  },
+  {
+   "id": "open-source-governance",
+   "section": 5,
+   "title": "Produce an open source policy and verify licensing",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.25"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check that a publicly facing open source policy exists on the website.",
+       "2": "Check that the policy contains content about creation and contribution.",
+       "3": "Check that the content is written in plain English for readability."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/open-source-governance.html"
+  },
+  {
+   "id": "collaboration-and-contribution",
+   "section": 5,
+   "title": "Identify contributions made to open source projects",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.25"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check a product or service's website for a link to a public repository.",
+       "2": "Check for projects where group members are the source or contributor.",
+       "3": "Check activity levels for open source work are consistent and not irregular."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/collaboration-and-contribution.html"
+  },
+  {
+   "id": "audience-awareness",
+   "section": 5,
+   "title": "Maintain transparent communication when problems occur",
+   "level": "Advisory",
+   "guideline_refs": [
+    "5.26"
+   ],
+   "test_count": 1,
+   "tests": [
+    {
+     "procedure": [
+      {
+       "1": "Check for backups that are stored in a read-only, recoverable state (internal access).",
+       "2": "Check for a public-facing policy relating to disaster recovery and continuity.",
+       "3": "Check for a system status page and that everything is running correctly."
+      }
+     ],
+     "expectedResults": "All checks above are true."
+    }
+   ],
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/audience-awareness.html"
+  }
+ ]
+}

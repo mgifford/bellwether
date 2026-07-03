@@ -1,0 +1,15 @@
+{
+  "title": "STAR fixture",
+  "lastModified": "2026-01-01",
+  "category": [
+    { "id": "1", "name": "Introduction" },
+    { "id": "2", "name": "User Experience Design", "shortName": "UX", "techniques": [
+      { "id": "linked-technique", "title": "Linked technique",
+        "applicability": "This technique is **Advisory** to meet *success criteria* within [UX guideline](https://www.w3.org/TR/x/#ux-guideline).",
+        "description": [], "examples": [], "tests": [{ "t": 1 }], "testSuite": null },
+      { "id": "orphan-technique", "title": "Orphan technique",
+        "applicability": "No anchor present.",
+        "description": [], "examples": [], "tests": [], "testSuite": null }
+    ] }
+  ]
+}

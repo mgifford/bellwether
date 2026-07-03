@@ -1,0 +1,30 @@
+{
+  "title": "WSG fixture",
+  "edition": "fixture",
+  "lastModified": "2026-02-01",
+  "category": [
+    { "id": "1", "name": "Introduction" },
+    { "id": "2", "name": "User Experience Design", "shortName": "UX", "guidelines": [
+      { "id": "ux-guideline", "url": "https://www.w3.org/TR/x/#ux-guideline", "guideline": "UX guideline", "criteria": [
+        { "title": "Stable criterion", "description": "This text never changes.", "resources": [] },
+        { "title": "Wording criterion", "description": "Revised wording here.", "resources": [] }
+      ] }
+    ] },
+    { "id": "3", "name": "Web Development", "shortName": "WD", "guidelines": [
+      { "id": "wd-guideline", "url": "https://www.w3.org/TR/x/#wd-guideline", "guideline": "WD guideline", "criteria": [
+        { "title": "Brand new criterion", "description": "Inserted at the top.", "resources": [] },
+        { "title": "Old dev criterion", "description": "Dev text.", "resources": [] }
+      ] }
+    ] },
+    { "id": "4", "name": "Hosting", "shortName": "HIS", "guidelines": [
+      { "id": "his-guideline", "url": "https://www.w3.org/TR/x/#his-guideline", "guideline": "HIS guideline", "criteria": [
+        { "title": "Hosting keeper", "description": "Stays.", "resources": [] }
+      ] }
+    ] },
+    { "id": "5", "name": "Business", "shortName": "BSPM", "guidelines": [
+      { "id": "biz-guideline", "url": "https://www.w3.org/TR/x/#biz-guideline", "guideline": "Biz guideline", "criteria": [
+        { "title": "Business criterion", "description": "Business text.", "resources": [] }
+      ] }
+    ] }
+  ]
+}
