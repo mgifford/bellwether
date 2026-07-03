@@ -8,3 +8,5 @@ Reduced fake upstream data exercising every diff class (spec-001):
   moved), one deleted (4.1.2).
 - `star-fixture.json`: two techniques; one links to a guideline via its
   applicability anchor, one is deliberately unlinkable.
+- `impact-fixture.json`: two impact ratings; one links to `upstream-before.json`'s
+  ux-guideline by URL, one is deliberately unlinkable.

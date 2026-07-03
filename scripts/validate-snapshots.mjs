@@ -6,6 +6,7 @@ import { readFile, readdir } from 'node:fs/promises';
 const pairs = [
   ['wsg-guidelines.json', 'snapshot-guidelines'],
   ['star-techniques.json', 'snapshot-star'],
+  ['wsg-impact.json', 'snapshot-impact'],
   ['snapshot-meta.json', 'snapshot-meta'],
 ];
 

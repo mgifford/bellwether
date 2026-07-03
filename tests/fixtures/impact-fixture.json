@@ -1,0 +1,27 @@
+{
+  "title": "WSG Impact fixture",
+  "edition": "fixture",
+  "lastModified": "2026-01-01",
+  "category": [
+    { "id": "1", "name": "Introduction" },
+    {
+      "id": "2",
+      "name": "User Experience Design",
+      "shortName": "UX",
+      "guidelines": [
+        {
+          "id": "https://www.w3.org/TR/x/#ux-guideline",
+          "impactRatings": { "people": "Medium", "planet": "Low", "prosperity": "Indeterminate", "timeframe": "Short" },
+          "points": { "people": 2, "planet": 1, "prosperity": 0, "timeframe": 3, "impactScore": 6 },
+          "rationale": "Fixture rationale.",
+          "metrics": ["Time on site"]
+        },
+        {
+          "id": "https://www.w3.org/TR/x/#orphan-guideline",
+          "impactRatings": { "people": "Low", "planet": "Low", "prosperity": "Low", "timeframe": "Long" },
+          "points": { "people": 0, "planet": 0, "prosperity": 0, "timeframe": 1, "impactScore": 1 }
+        }
+      ]
+    }
+  ]
+}

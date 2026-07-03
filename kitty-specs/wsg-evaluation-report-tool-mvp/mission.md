@@ -1,6 +1,6 @@
 # Mission: Bellwether, a WSG Evaluation Report Tool (MVP)
 
-Status: DRAFT for human review. No production code until this mission, the data schema, and GOVERNANCE.md are approved.
+Status: Approved 2026-07-03 by Mike Gifford (lead maintainer). Production code may proceed in the task order below.
 
 ## Problem statement
 
@@ -16,7 +16,7 @@ Decided (2026-07-02):
 - Interface model: the WCAG-EM Report Tool's stepwise report-builder pattern (define scope, explore, audit, report) is the UI reference. We copy the interaction model, not the methodology.
 - Content and methodology: WSG success criteria and STAR techniques/tests, loaded from dated, versioned snapshots. Every report pins wsg_version and star_version (both are drafts; the date is part of the record).
 - The editor is a JavaScript application, built cautiously (progressive enhancement where practical, accessible widgets, JS budget tracked per release). Zero-JS applies to generated reports only. See ADR-0001.
-- Ingests automated scan output (vital-core first) as evidence, never as verdicts.
+- Ingests automated scan output (vital-core first) as evidence, never as verdicts. vital-core owns continuous crawling and scanning; Bellwether never crawls. Import is via vital-core's published artifacts (API or WebMCP server where available, static run JSON as fallback) rather than a one-off file drop, so a report can be refreshed against current scan data without re-uploading.
 - Every result carries both a testability level and a result status.
 
 ## Non-goals
@@ -36,6 +36,7 @@ accessibility_auditor:
   - As an auditor working across WCAG and WSG, I record accessibility findings as sustainability evidence (WSG treats accessibility as a non-negotiable) without duplicating my WCAG-EM work.
 public_sector_manager:
   - As a program manager, I read a report that distinguishes automated evidence from evaluator judgement from organizational documentation, and use it in procurement or remediation planning.
+  - As a leader without time to read raw scan output, I see which trends and patterns recur across pages and technologies (e.g., a specific third-party script or an aging platform showing up repeatedly across findings), so I know what to prioritize: reducing third-party tooling, retiring legacy codebases, or funding a specific remediation.
 organization:
   - As a team, we reopen a report next quarter, re-import fresh scan data, and track what changed.
 
@@ -65,7 +66,7 @@ The WSG conformance model (spec section 1.4) is the roll-up model: success crite
 in_scope:
   - create/edit report metadata and scope (domains, URLs, journeys, exclusions, time period)
   - load WSG guideline and success criterion data from versioned JSON (wsg-guidelines.json)
-  - import one vital-core run JSON (runs/latest.json shape) via a versioned importer
+  - import one vital-core run (runs/latest.json shape, via file, API, or WebMCP where available) via a versioned importer
   - map imported findings to WSG success criteria using automated-check-map.json; accept/reject/edit/annotate
   - add manual findings and organizational evidence with provenance
   - assign result status, severity, impact, confidence, owner, remediation status
@@ -103,9 +104,11 @@ Content shown at each step (guideline text, success criteria, techniques, tests)
 
 ## Relationship to vital-core
 
-- vital-core is the reference automated evidence producer. Its published artifacts (runs/latest.json, api/targets.json, per-target issue snapshots) define the first import format.
+- Division of labor: vital-core crawls, scans, and continuously measures (accessibility via axe-core/Alfa, sustainability via co2.js and page-weight/tech-stack signals) and publishes trend data. Bellwether never crawls (non-goal 1) and does not duplicate vital-core's continuous scanning. Bellwether consumes vital-core's output as evidence and adds the layer vital-core does not: structured manual/organizational findings against WSG, and a management-facing view of trends and patterns for prioritization (see public_sector_manager user story).
+- vital-core is the reference automated evidence producer. Its published artifacts (runs/latest.json, api/targets.json, per-target issue snapshots) define the first import format; an API or WebMCP interface is preferred over static file drops where vital-core exposes one, so reports can refresh against live scan data (see MVP scope).
 - This repository mirrors vital-core's Spec-Kitty conventions (.kittify/, kitty-specs/, CONSTITUTION.md, AGENTS.md) so the two projects share a governance vocabulary.
 - No shared code initially; shared schemas are a candidate for a later extraction, decided by ADR.
+- Domain/site lists (which sites to scan) belong entirely to vital-core's config/targets.yml. Bellwether's "scope" (MVP scope, in_scope) is per-report and downstream: which of vital-core's already-scanned domains this particular evaluation covers, not a crawl instruction.
 
 ## Definition of done (per feature)
 
@@ -132,3 +135,8 @@ Content shown at each step (guideline text, success criteria, techniques, tests)
 - Mapping overreach: pressure to mark checks "automatically-tested" that are only proxies (e.g., page weight as a proxy for guideline 2.11 media optimization). Mitigation: false-positive/false-negative fields are mandatory in every mapping; reviewers reject mappings without them.
 - Scope creep toward scanning: refused by non-goal 1.
 - Solo-maintainer governance theater: the governance model below is designed to be executable by one maintainer plus AI agents plus occasional external reviewers, not to imitate a large project.
+
+## Parked (explicitly out of scope for this mission, tracked for later)
+
+- vital-core multi-tenancy: the maintainer currently runs multiple near-duplicate vital-core deployments (e.g. HHS/CMS-focused instances, a Hugging Face Spaces mirror) to cover different site groups, which does not scale as a repo-per-site-group pattern. This is a vital-core architecture/deployment problem, not a Bellwether concern. Needs its own investigation in vital-core before any Bellwether dependency is designed around it.
+- LLM-assisted analysis/chatbot: possible future Bellwether or vital-core feature to let evaluators or managers query findings conversationally (candidates: Hugging Face-hosted models, GitHub Copilot). Deferred until a concrete cost model exists; the maintainer is already at capacity on hosted-model credits, so any such feature should default to bounded, low-cost, or local inference (see the maintainer's local-first Ollama routing preference) rather than open-ended hosted LLM calls.

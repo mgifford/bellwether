@@ -1,0 +1,31 @@
+name: Monthly WSG snapshot
+on:
+  schedule:
+    - cron: '0 6 1 * *' # 06:00 UTC on the 1st of every month
+  workflow_dispatch: {}
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run snapshot
+      - run: node scripts/validate-snapshots.mjs
+      - name: Open PR if upstream changed
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'chore: monthly WSG/STAR/impact snapshot'
+          title: 'Monthly WSG snapshot update'
+          body: |
+            Automated snapshot cut from w3c/sustainableweb-wsg (guidelines.json,
+            star.json, impact.json). Human review required before merge per
+            GOVERNANCE.md (schema/data changes) and mission.md's snapshot
+            migration workflow if any success criteria changed.
+          branch: automated/wsg-snapshot
+          add-paths: src/data/wsg

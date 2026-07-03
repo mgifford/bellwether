@@ -12,7 +12,7 @@ The WSG and STAR are W3C Group Note Drafts. Every report pins dated snapshots of
 
 ## Status
 
-Early development. Currently implemented (spec-001): the WSG/STAR snapshot pipeline that converts upstream [w3c/sustainableweb-wsg](https://github.com/w3c/sustainableweb-wsg) data into dated, identifier-stable, schema-validated snapshots, plus a diff tool that generates migration notes between snapshots.
+Early development. Currently implemented (spec-001): the WSG/STAR/impact snapshot pipeline that converts upstream [w3c/sustainableweb-wsg](https://github.com/w3c/sustainableweb-wsg) data into dated, identifier-stable, schema-validated snapshots, plus a diff tool that generates migration notes between snapshots. A monthly GitHub Actions workflow re-cuts the snapshot and opens a PR for review when upstream changes.
 
 ```
 npm install

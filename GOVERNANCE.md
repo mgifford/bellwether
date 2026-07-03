@@ -67,4 +67,4 @@ Every major decision gets an ADR using adr/ADR-0000-template.md, including: deci
 
 ## License
 
-AGPL-3.0 proposed, matching vital-core. Confirm before first release (open question: AGPL can deter public-sector adoption; MIT/Apache-2.0 vs AGPL is an ADR).
+AGPL-3.0-or-later, matching vital-core. Decided in ADR-0002.

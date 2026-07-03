@@ -13,6 +13,7 @@
         "repository": { "const": "w3c/sustainableweb-wsg" },
         "guidelines_last_modified": { "type": "string" },
         "star_last_modified": { "type": "string" },
+        "impact_last_modified": { "type": "string" },
         "edition": { "type": "string" }
       }
     },
@@ -26,9 +27,12 @@
         "guidelines": { "type": "integer" },
         "criteria": { "type": "integer" },
         "star_techniques": { "type": "integer" },
-        "star_unlinked": { "type": "integer" }
+        "star_unlinked": { "type": "integer" },
+        "impact_ratings": { "type": "integer" },
+        "impact_unlinked": { "type": "integer" }
       }
     },
-    "star_unlinked_techniques": { "type": "array", "items": { "type": "string" } }
+    "star_unlinked_techniques": { "type": "array", "items": { "type": "string" } },
+    "impact_unlinked_urls": { "type": "array", "items": { "type": "string" } }
   }
 }

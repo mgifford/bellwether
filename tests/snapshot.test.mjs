@@ -6,6 +6,7 @@ import {
   contentHash,
   buildGuidelinesSnapshot,
   buildStarSnapshot,
+  buildImpactSnapshot,
 } from '../scripts/snapshot.mjs';
 import { diffSnapshots, renderMigrationNote } from '../scripts/diff-snapshots.mjs';
 
@@ -45,6 +46,17 @@ test('buildStarSnapshot links techniques to guidelines via applicability anchors
   assert.deepEqual(techniques[0].guideline_refs, ['2.1']);
   assert.equal(techniques[0].level, 'Advisory');
   assert.deepEqual(unlinked, ['orphan-technique']);
+});
+
+test('buildImpactSnapshot links ratings to guidelines via URL', async () => {
+  const upstream = await fixture('upstream-before.json');
+  const impact = await fixture('impact-fixture.json');
+  const sections = buildGuidelinesSnapshot(upstream);
+  const { ratings, unlinked } = buildImpactSnapshot(impact, sections);
+  assert.equal(ratings.length, 2);
+  assert.equal(ratings[0].guideline_ref, '2.1');
+  assert.equal(ratings[0].points.impactScore, 6);
+  assert.deepEqual(unlinked, ['https://www.w3.org/TR/x/#orphan-guideline']);
 });
 
 test('diffSnapshots classifies all five change types', async () => {

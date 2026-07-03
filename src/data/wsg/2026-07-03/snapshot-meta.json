@@ -1,0 +1,25 @@
+{
+ "snapshot_date": "2026-07-03",
+ "upstream": {
+  "repository": "w3c/sustainableweb-wsg",
+  "guidelines_last_modified": "2026-07-03",
+  "star_last_modified": "2026-07-03",
+  "impact_last_modified": "2026-06-25",
+  "edition": "Group Note Draft"
+ },
+ "fetched_at": "2026-07-03T18:23:42.191Z",
+ "tool_version": "0.1.0",
+ "counts": {
+  "sections": 4,
+  "guidelines": 71,
+  "criteria": 196,
+  "star_techniques": 116,
+  "star_unlinked": 1,
+  "impact_ratings": 71,
+  "impact_unlinked": 0
+ },
+ "star_unlinked_techniques": [
+  "compatibility-documentation"
+ ],
+ "impact_unlinked_urls": []
+}

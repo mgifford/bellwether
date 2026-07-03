@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Bellwether WSG impact snapshot",
+  "type": "object",
+  "required": ["snapshot_date", "ratings"],
+  "additionalProperties": false,
+  "properties": {
+    "snapshot_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "ratings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["guideline_ref", "url", "impact_ratings", "points"],
+        "additionalProperties": false,
+        "properties": {
+          "guideline_ref": { "type": ["string", "null"], "pattern": "^[2-5]\\.\\d+$" },
+          "url": { "type": "string", "pattern": "^https://www\\.w3\\.org/" },
+          "impact_ratings": {
+            "type": "object",
+            "required": ["people", "planet", "prosperity", "timeframe"],
+            "properties": {
+              "people": { "type": "string" },
+              "planet": { "type": "string" },
+              "prosperity": { "type": "string" },
+              "timeframe": { "type": "string" }
+            }
+          },
+          "points": {
+            "type": "object",
+            "required": ["people", "planet", "prosperity", "timeframe", "impactScore"],
+            "properties": {
+              "people": { "type": "number" },
+              "planet": { "type": "number" },
+              "prosperity": { "type": "number" },
+              "timeframe": { "type": "number" },
+              "impactScore": { "type": "number" }
+            }
+          },
+          "rationale": { "type": ["string", "null"] },
+          "metrics": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}

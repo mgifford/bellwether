@@ -1,5 +1,5 @@
 {
- "snapshot_date": "2026-06-09",
+ "snapshot_date": "2026-07-03",
  "sections": [
   {
    "section": 2,
@@ -6191,7 +6191,7 @@
      "slug": "establish-responsible-practices-around-ai-and-emerging-or-disruptive-technologies",
      "url": "https://www.w3.org/TR/web-sustainability-guidelines/#establish-responsible-practices-around-ai-and-emerging-or-disruptive-technologies",
      "title": "Establish responsible practices around AI and emerging or disruptive technologies",
-     "subheading": "Ensure responsible use of automated systems by only using ethically sourced and suitably sized data, managing environmental impacts, supporting workforce adaptation, respecting user agent controls, and using post-quantum encryption only where justified.",
+     "subheading": "Ensure responsible use of automated systems by only using ethically sourced and suitably sized data and models, managing environmental impacts, supporting workforce adaptation, respecting user agent controls, and using post-quantum encryption only where justified.",
      "tags": [
       "Accessibility",
       "AI",
@@ -6488,8 +6488,8 @@
     },
     {
      "id": "5.21",
-     "slug": "adopt-organizational-philanthropy-policies",
-     "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-organizational-philanthropy-policies",
+     "slug": "adopt-organizational-philanthropy-practices",
+     "url": "https://www.w3.org/TR/web-sustainability-guidelines/#adopt-organizational-philanthropy-practices",
      "title": "Adopt organizational philanthropy practices",
      "subheading": "Align partnerships and corporate giving with the organization's purpose, and support skill-building voluntary and pro bono work through clear partnership and giving policies.",
      "tags": [

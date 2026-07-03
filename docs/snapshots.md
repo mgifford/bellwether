@@ -2,15 +2,16 @@
 
 Bellwether renders all evaluation content from dated snapshots of the upstream
 [w3c/sustainableweb-wsg](https://github.com/w3c/sustainableweb-wsg) data files
-(`guidelines.json`, `star.json`). Both the WSG and STAR are living W3C Group
-Note Drafts; reports pin the snapshot date they were evaluated against so the
-criteria text an evaluator saw is exactly reproducible later.
+(`guidelines.json`, `star.json`, `impact.json`). Both the WSG and STAR are
+living W3C Group Note Drafts; reports pin the snapshot date they were
+evaluated against so the criteria text an evaluator saw is exactly
+reproducible later.
 
 ## Cutting a snapshot
 
 ```
 npm run snapshot                       # fetch upstream main
-npm run snapshot:local -- <dir>        # use local guidelines.json/star.json
+npm run snapshot:local -- <dir>        # use local guidelines.json/star.json/impact.json
 ```
 
 Output lands in `src/data/wsg/<date>/`:
@@ -18,11 +19,20 @@ Output lands in `src/data/wsg/<date>/`:
 - `wsg-guidelines.json`: sections, guidelines, and success criteria with
   derived IDs and content hashes
 - `star-techniques.json`: STAR techniques linked to guidelines
+- `wsg-impact.json`: WSG impact ratings (people/planet/prosperity/timeframe
+  and points) linked to guidelines by URL
 - `snapshot-meta.json`: upstream provenance, fetch time, counts
 
-All three are validated against the schemas in `schemas/` before writing; a
+All four are validated against the schemas in `schemas/` before writing; a
 structurally surprising upstream (wrong section count, implausible totals)
 fails the build rather than producing a wrong snapshot.
+
+## Monthly automation
+
+`.github/workflows/snapshot.yml` runs on the 1st of every month (and on
+manual dispatch), cuts a fresh snapshot, and opens a pull request only if
+upstream data changed. Per GOVERNANCE.md, schema/data changes require human
+review before merge — the workflow never merges automatically.
 
 ## Derived identifiers
 

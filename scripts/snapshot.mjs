@@ -2,9 +2,9 @@
 /**
  * Bellwether snapshot pipeline (spec-001).
  *
- * Converts upstream w3c/sustainableweb-wsg data (guidelines.json, star.json)
- * into a dated, identifier-stable, schema-validated snapshot under
- * src/data/wsg/<date>/.
+ * Converts upstream w3c/sustainableweb-wsg data (guidelines.json, star.json,
+ * impact.json) into a dated, identifier-stable, schema-validated snapshot
+ * under src/data/wsg/<date>/.
  *
  * Derived success criterion IDs are positional: <section>.<guideline>.<criterion>
  * (e.g. "2.1.1"). Each criterion also carries a content_hash (SHA-256 of
@@ -13,7 +13,7 @@
  *
  * Usage:
  *   node scripts/snapshot.mjs                 # fetch upstream
- *   node scripts/snapshot.mjs --local <dir>   # use local guidelines.json/star.json
+ *   node scripts/snapshot.mjs --local <dir>   # use local guidelines.json/star.json/impact.json
  */
 
 import { createHash } from 'node:crypto';
@@ -109,11 +109,41 @@ export function buildStarSnapshot(star, guidelineSections) {
   return { techniques, unlinked };
 }
 
+/**
+ * Link impact ratings to guidelines by matching impact.json's guideline URL
+ * against guidelines.json's guideline.url (impact.json has no slug/anchor,
+ * only the full W3C URL). Unlinked ratings are reported, not dropped.
+ */
+export function buildImpactSnapshot(impact, guidelineSections) {
+  const byUrl = new Map();
+  for (const s of guidelineSections) {
+    for (const g of s.guidelines) byUrl.set(g.url, g.id);
+  }
+  const ratings = [];
+  const unlinked = [];
+  for (const cat of impact.category ?? []) {
+    for (const g of cat.guidelines ?? []) {
+      const guidelineRef = byUrl.get(g.id) ?? null;
+      ratings.push({
+        guideline_ref: guidelineRef,
+        url: g.id,
+        impact_ratings: g.impactRatings,
+        points: g.points,
+        rationale: g.rationale ?? null,
+        metrics: g.metrics ?? [],
+      });
+      if (!guidelineRef) unlinked.push(g.id);
+    }
+  }
+  return { ratings, unlinked };
+}
+
 async function loadUpstream(localDir) {
   if (localDir) {
     return {
       guidelines: JSON.parse(await readFile(join(localDir, 'guidelines.json'), 'utf8')),
       star: JSON.parse(await readFile(join(localDir, 'star.json'), 'utf8')),
+      impact: JSON.parse(await readFile(join(localDir, 'impact.json'), 'utf8')),
     };
   }
   const fetchJson = async (name) => {
@@ -121,7 +151,11 @@ async function loadUpstream(localDir) {
     if (!res.ok) throw new Error(`Upstream fetch failed for ${name}: ${res.status}`);
     return res.json();
   };
-  return { guidelines: await fetchJson('guidelines.json'), star: await fetchJson('star.json') };
+  return {
+    guidelines: await fetchJson('guidelines.json'),
+    star: await fetchJson('star.json'),
+    impact: await fetchJson('impact.json'),
+  };
 }
 
 async function validate(schemaPath, data, label) {
@@ -136,7 +170,7 @@ async function validate(schemaPath, data, label) {
 export async function main(argv = process.argv.slice(2)) {
   const localIdx = argv.indexOf('--local');
   const localDir = localIdx >= 0 ? argv[localIdx + 1] : null;
-  const { guidelines, star } = await loadUpstream(localDir);
+  const { guidelines, star, impact } = await loadUpstream(localDir);
 
   const date = guidelines.lastModified;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(String(date))) {
@@ -145,6 +179,7 @@ export async function main(argv = process.argv.slice(2)) {
 
   const sections = buildGuidelinesSnapshot(guidelines);
   const { techniques, unlinked } = buildStarSnapshot(star, sections);
+  const { ratings, unlinked: impactUnlinked } = buildImpactSnapshot(impact, sections);
 
   const counts = {
     sections: sections.length,
@@ -155,6 +190,8 @@ export async function main(argv = process.argv.slice(2)) {
     ),
     star_techniques: techniques.length,
     star_unlinked: unlinked.length,
+    impact_ratings: ratings.length,
+    impact_unlinked: impactUnlinked.length,
   };
 
   // Structural surprise guards: fail loudly rather than emit a wrong snapshot.
@@ -172,29 +209,37 @@ export async function main(argv = process.argv.slice(2)) {
       repository: 'w3c/sustainableweb-wsg',
       guidelines_last_modified: guidelines.lastModified,
       star_last_modified: star.lastModified,
+      impact_last_modified: impact.lastModified,
       edition: guidelines.edition,
     },
     fetched_at: new Date().toISOString(),
     tool_version: TOOL_VERSION,
     counts,
     star_unlinked_techniques: unlinked,
+    impact_unlinked_urls: impactUnlinked,
   };
 
   const guidelinesDoc = { snapshot_date: date, sections };
   const starDoc = { snapshot_date: date, techniques };
+  const impactDoc = { snapshot_date: date, ratings };
 
   await validate(join(REPO_ROOT, 'schemas', 'snapshot-guidelines.schema.json'), guidelinesDoc, 'wsg-guidelines.json');
   await validate(join(REPO_ROOT, 'schemas', 'snapshot-star.schema.json'), starDoc, 'star-techniques.json');
+  await validate(join(REPO_ROOT, 'schemas', 'snapshot-impact.schema.json'), impactDoc, 'wsg-impact.json');
   await validate(join(REPO_ROOT, 'schemas', 'snapshot-meta.schema.json'), meta, 'snapshot-meta.json');
 
   await writeFile(join(outDir, 'wsg-guidelines.json'), JSON.stringify(guidelinesDoc, null, 1));
   await writeFile(join(outDir, 'star-techniques.json'), JSON.stringify(starDoc, null, 1));
+  await writeFile(join(outDir, 'wsg-impact.json'), JSON.stringify(impactDoc, null, 1));
   await writeFile(join(outDir, 'snapshot-meta.json'), JSON.stringify(meta, null, 1));
 
   console.log(`Snapshot ${date} written to ${outDir}`);
   console.log(JSON.stringify(counts));
   if (unlinked.length) {
     console.log(`Unlinked STAR techniques (${unlinked.length}): ${unlinked.join(', ')}`);
+  }
+  if (impactUnlinked.length) {
+    console.log(`Unlinked impact ratings (${impactUnlinked.length}): ${impactUnlinked.join(', ')}`);
   }
   return { outDir, counts };
 }

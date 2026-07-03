@@ -1,5 +1,5 @@
 {
- "snapshot_date": "2026-06-09",
+ "snapshot_date": "2026-07-03",
  "techniques": [
   {
    "id": "impact-analysis",
@@ -77,32 +77,6 @@
    "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/audience-evaluation.html"
   },
   {
-   "id": "barriers-and-access",
-   "section": 2,
-   "title": "Test against specific disability profiles for more calibrated accessibility",
-   "level": "Advisory",
-   "guideline_refs": [
-    "2.2"
-   ],
-   "test_count": 1,
-   "tests": [
-    {
-     "procedure": [
-      {
-       "1": "Identify users or individuals with disabilities who can help you become more accessible.",
-       "2": "Create testable profiles from symptom/issue lists that cause issues.",
-       "3": "Check that potential solutions do not interfere with existing functionality.",
-       "4": "Create and implement newly calibrated accessibility features.",
-       "5": "Check that the features work as implemented against all existing functionality.",
-       "6": "Report the findings within your accessibility statement."
-      }
-     ],
-     "expectedResults": "All checks above are true."
-    }
-   ],
-   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/barriers-and-access.html"
-  },
-  {
    "id": "efficient-paths",
    "section": 2,
    "title": "Measure interaction cost to reach every page in the information architecture",
@@ -128,7 +102,7 @@
    "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/efficient-paths.html"
   },
   {
-   "id": "human-readable-sitemaps",
+   "id": "content-discovery",
    "section": 2,
    "title": "Provide a human-readable sitemap to improve the information architecture",
    "level": "Advisory",
@@ -151,7 +125,7 @@
      "expectedResults": "All checks above are true."
     }
    ],
-   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/human-readable-sitemaps.html"
+   "test_suite": "https://w3c.github.io/sustainableweb-wsg/test-suite/content-discovery.html"
   },
   {
    "id": "respect-user-attention",
