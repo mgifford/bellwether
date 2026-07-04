@@ -10,7 +10,8 @@
     "snapshot:local": "node scripts/snapshot.mjs --local",
     "diff": "node scripts/diff-snapshots.mjs",
     "test": "node --test tests/*.test.mjs",
-    "validate": "node scripts/validate-snapshots.mjs"
+    "validate": "node scripts/validate-snapshots.mjs",
+    "validate:report": "node scripts/validate-report.mjs"
   },
   "engines": {
     "node": ">=20"

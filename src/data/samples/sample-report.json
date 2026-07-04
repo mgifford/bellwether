@@ -1,0 +1,204 @@
+{
+  "schema_version": "0.1.0-draft",
+  "id": "sample-report-0001",
+  "title": "Sample WSG evaluation: example.gov",
+  "wsg_version": "2026-07-03",
+  "star_version": "2026-07-03",
+  "created": "2026-07-03T00:00:00Z",
+  "last_updated": "2026-07-03T00:00:00Z",
+  "status": "draft",
+  "subject": {
+    "name": "Example Agency website",
+    "type": "website",
+    "organization": "Example Agency",
+    "urls": ["https://example.gov"]
+  },
+  "evaluator": {
+    "name": "Jane Evaluator",
+    "organization": "Independent",
+    "contact": "jane@example.com"
+  },
+  "scope": {
+    "domains": ["example.gov"],
+    "urls": ["https://example.gov", "https://example.gov/about"],
+    "sitemaps": ["https://example.gov/sitemap.xml"],
+    "user_journeys": ["Find agency contact information"],
+    "languages": ["en"],
+    "devices": ["desktop", "mobile"],
+    "browsers": ["chrome"],
+    "exclusions": ["Legacy archive subdomain (pre-2015 content, scheduled for retirement)"],
+    "time_period": { "start": "2026-06-01", "end": "2026-07-03" }
+  },
+  "methodology": {
+    "description": "Evaluation follows STAR (2026-07-03 snapshot). Automated evidence imported from vital-core; remaining criteria evaluated manually or via organizational documentation.",
+    "tools_used": [
+      { "name": "vital-core", "version": "unknown", "role": "automated accessibility and sustainability scanning" }
+    ],
+    "automated_coverage_note": "vital-core covers page weight, image inventory, and a subset of accessibility checks.",
+    "manual_coverage_note": "UX and content criteria reviewed manually against a five-page sample.",
+    "organizational_evidence_note": "Procurement and governance criteria evaluated from the agency's published IT sustainability policy."
+  },
+  "findings": [
+    {
+      "id": "finding-0001",
+      "wsg_ref": "2.1.1",
+      "wsg_guideline": "2.1",
+      "wsg_title": "Identify, assess, disclose, review, and mitigate sustainability impacts",
+      "wsg_section": "ux-design",
+      "ppp": ["planet", "prosperity"],
+      "testability_level": "organizational-evidence-required",
+      "result_status": "requires-organizational-evidence",
+      "evaluation_method": "Review of published organizational policy documents",
+      "evidence": [
+        {
+          "kind": "organizational",
+          "summary": "Agency IT sustainability policy documents an annual impact review process.",
+          "confidence": "medium",
+          "organizational": {
+            "document_name": "Example Agency IT Sustainability Policy",
+            "document_owner": "Office of the CIO",
+            "document_date": "2026-01-15",
+            "review_date": "2026-06-15"
+          }
+        }
+      ],
+      "affected_urls": ["https://example.gov"],
+      "severity": null,
+      "impact": "Organization has a documented review process but has not disclosed findings publicly.",
+      "confidence": "medium",
+      "remediation_recommendation": "Publish impact review findings alongside the policy document.",
+      "owner": "Office of the CIO",
+      "remediation_status": "planned",
+      "reviewer": "Jane Evaluator",
+      "review_date": "2026-06-15",
+      "notes": null,
+      "related_standards": [],
+      "related_issue_url": null,
+      "sensitivity": "public",
+      "last_updated": "2026-07-03T00:00:00Z",
+      "modified_after_import": false
+    },
+    {
+      "id": "finding-0002",
+      "wsg_ref": "2.2.1",
+      "wsg_guideline": "2.2",
+      "wsg_title": "Understand user requirements or constraints",
+      "wsg_section": "ux-design",
+      "ppp": ["people"],
+      "testability_level": "automatically-tested",
+      "result_status": "pass",
+      "evaluation_method": "Automated scan imported from vital-core",
+      "evidence": [
+        {
+          "kind": "automated",
+          "summary": "Page weight and accessibility scan found no blocking issues on sampled pages.",
+          "confidence": "high",
+          "automated": {
+            "tool_name": "vital-core",
+            "tool_version": "unknown",
+            "scan_datetime": "2026-07-01T03:00:00Z",
+            "scan_configuration": { "budget": 25 },
+            "url_tested": "https://example.gov",
+            "raw_result": { "axe_violations": 0, "page_weight_kb": 480 },
+            "mapping_id": "sample-mapping-not-yet-defined",
+            "mapping_version": "0.0.0-placeholder",
+            "importer_version": "0.0.0-placeholder"
+          }
+        }
+      ],
+      "affected_urls": ["https://example.gov"],
+      "severity": "none",
+      "impact": null,
+      "confidence": "high",
+      "remediation_recommendation": null,
+      "owner": null,
+      "remediation_status": null,
+      "reviewer": "Jane Evaluator",
+      "review_date": "2026-07-01",
+      "notes": "Automated evidence only; not independently confirmed by manual review.",
+      "related_standards": [],
+      "related_issue_url": null,
+      "sensitivity": "public",
+      "last_updated": "2026-07-03T00:00:00Z",
+      "modified_after_import": false
+    },
+    {
+      "id": "finding-0003",
+      "wsg_ref": "3.1.1",
+      "wsg_guideline": "3.1",
+      "wsg_title": "Sample web development guideline",
+      "wsg_section": "web-development",
+      "ppp": ["planet"],
+      "testability_level": "manual-review-required",
+      "result_status": "needs-improvement",
+      "evaluation_method": "Manual code review of a five-page sample",
+      "evidence": [
+        {
+          "kind": "manual",
+          "summary": "Third-party analytics script loaded on every page, unminified, no caching headers.",
+          "confidence": "high",
+          "manual": {
+            "evaluator": "Jane Evaluator",
+            "review_date": "2026-06-20",
+            "method": "Browser devtools network inspection on 5 sampled pages"
+          }
+        }
+      ],
+      "affected_urls": ["https://example.gov", "https://example.gov/about"],
+      "severity": "moderate",
+      "impact": "Adds roughly 90KB uncompressed to every page load, no cache reuse across visits.",
+      "confidence": "high",
+      "remediation_recommendation": "Enable caching headers on the analytics script or self-host a minified build.",
+      "owner": "Web team",
+      "remediation_status": "open",
+      "reviewer": "Jane Evaluator",
+      "review_date": "2026-06-20",
+      "notes": null,
+      "related_standards": [],
+      "related_issue_url": null,
+      "sensitivity": "public",
+      "last_updated": "2026-07-03T00:00:00Z",
+      "modified_after_import": false
+    },
+    {
+      "id": "finding-0004",
+      "wsg_ref": "5.1.1",
+      "wsg_guideline": "5.1",
+      "wsg_title": "Sample business/product guideline not evaluated this cycle",
+      "wsg_section": "business-product",
+      "ppp": [],
+      "testability_level": "not-evaluated",
+      "result_status": "not-tested",
+      "evaluation_method": "Out of scope for this evaluation cycle",
+      "evidence": [],
+      "affected_urls": [],
+      "severity": null,
+      "impact": null,
+      "confidence": "low",
+      "remediation_recommendation": null,
+      "owner": null,
+      "remediation_status": null,
+      "reviewer": null,
+      "review_date": null,
+      "notes": "Deferred to next quarter's procurement review.",
+      "related_standards": [],
+      "related_issue_url": null,
+      "sensitivity": "public",
+      "last_updated": "2026-07-03T00:00:00Z",
+      "modified_after_import": false
+    }
+  ],
+  "summaries": {
+    "by_guideline": {},
+    "by_section": {},
+    "ppp": {}
+  },
+  "narrative": {
+    "top_risks": ["Uncached third-party analytics script adds avoidable page weight across the entire site."],
+    "top_opportunities": ["Publishing the existing sustainability impact review would close a disclosure gap at low cost."],
+    "unresolved_questions": ["Whether the legacy archive subdomain excluded from scope should be retired or brought into scope next cycle."],
+    "required_follow_up": ["Procurement/governance criteria review, deferred to next quarter."],
+    "remediation_roadmap": "Short term: fix analytics caching. Medium term: publish impact review findings. Long term: evaluate legacy archive subdomain retirement."
+  },
+  "conformance_language_policy_ack": true
+}

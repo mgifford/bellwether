@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellwether.dev/schemas/evidence.schema.json",
+  "title": "Bellwether evidence",
+  "description": "A single piece of evidence backing a finding. Discriminated union on kind: automated, manual, or organizational.",
+  "type": "object",
+  "required": ["kind", "summary", "confidence"],
+  "additionalProperties": false,
+  "properties": {
+    "kind": { "type": "string", "enum": ["automated", "manual", "organizational"] },
+    "summary": { "type": "string", "minLength": 1 },
+    "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
+    "automated": { "$ref": "#/definitions/automated" },
+    "manual": { "$ref": "#/definitions/manual" },
+    "organizational": { "$ref": "#/definitions/organizational" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "automated" } } },
+      "then": { "required": ["automated"] }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "manual" } } },
+      "then": { "required": ["manual"] }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "organizational" } } },
+      "then": { "required": ["organizational"] }
+    }
+  ],
+  "definitions": {
+    "automated": {
+      "type": "object",
+      "required": [
+        "tool_name",
+        "tool_version",
+        "scan_datetime",
+        "url_tested",
+        "raw_result",
+        "mapping_id",
+        "mapping_version",
+        "importer_version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "tool_name": { "type": "string", "minLength": 1 },
+        "tool_version": { "type": "string", "minLength": 1 },
+        "scan_datetime": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T" },
+        "scan_configuration": { "type": "object" },
+        "url_tested": { "type": "string", "minLength": 1 },
+        "raw_result": { "type": "object" },
+        "mapping_id": { "type": "string", "minLength": 1 },
+        "mapping_version": { "type": "string", "minLength": 1 },
+        "importer_version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "manual": {
+      "type": "object",
+      "required": ["evaluator", "review_date", "method"],
+      "additionalProperties": false,
+      "properties": {
+        "evaluator": { "type": "string", "minLength": 1 },
+        "review_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "method": { "type": "string", "minLength": 1 }
+      }
+    },
+    "organizational": {
+      "type": "object",
+      "required": ["document_name", "document_owner", "document_date", "review_date"],
+      "additionalProperties": false,
+      "properties": {
+        "document_name": { "type": "string", "minLength": 1 },
+        "document_owner": { "type": "string", "minLength": 1 },
+        "document_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "review_date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+      }
+    }
+  }
+}

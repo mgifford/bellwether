@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellwether.dev/schemas/automated-check-map-entry.schema.json",
+  "title": "Bellwether automated check map entry",
+  "description": "Maps one automated scanner check (e.g. a vital-core rule) to a WSG success criterion. Entries start draft: true and are promoted only after GOVERNANCE.md human review.",
+  "type": "object",
+  "required": [
+    "id",
+    "wsg_ref",
+    "wsg_title",
+    "test_name",
+    "test_category",
+    "automation_level",
+    "evidence_required",
+    "tool_source",
+    "scoring_method",
+    "false_positive_risks",
+    "false_negative_risks",
+    "remediation_guidance",
+    "advisory_or_blocking",
+    "human_review_required",
+    "draft",
+    "wsg_version",
+    "map_version"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "wsg_ref": { "type": "string", "pattern": "^[2-5]\\.\\d+\\.\\d+$" },
+    "wsg_title": { "type": "string", "minLength": 1 },
+    "test_name": { "type": "string", "minLength": 1 },
+    "test_category": { "type": "string", "minLength": 1 },
+    "star_technique": { "type": ["string", "null"] },
+    "star_absence_rationale": { "type": ["string", "null"] },
+    "automation_level": { "type": "string", "enum": ["automatically-tested", "partially-automated"] },
+    "evidence_required": { "type": "string", "minLength": 1 },
+    "tool_source": { "type": "string", "minLength": 1 },
+    "scoring_method": { "type": "string", "minLength": 1 },
+    "false_positive_risks": { "type": "string", "minLength": 1 },
+    "false_negative_risks": { "type": "string", "minLength": 1 },
+    "remediation_guidance": { "type": "string" },
+    "advisory_or_blocking": { "type": "string", "enum": ["advisory", "blocking"] },
+    "human_review_required": { "type": "boolean" },
+    "draft": { "type": "boolean" },
+    "wsg_version": { "type": "string", "minLength": 1 },
+    "map_version": { "type": "string", "minLength": 1 }
+  },
+  "if": {
+    "properties": { "star_technique": { "type": "null" } }
+  },
+  "then": {
+    "required": ["star_absence_rationale"],
+    "properties": {
+      "star_absence_rationale": { "type": "string", "minLength": 1 }
+    }
+  }
+}

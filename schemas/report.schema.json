@@ -1,0 +1,130 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellwether.dev/schemas/report.schema.json",
+  "title": "Bellwether report",
+  "description": "A user-owned WSG evaluation report. Pins wsg_version and star_version; summaries are computed roll-ups, never hand-entered.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "title",
+    "wsg_version",
+    "star_version",
+    "created",
+    "last_updated",
+    "status",
+    "subject",
+    "evaluator",
+    "scope",
+    "methodology",
+    "findings",
+    "summaries",
+    "narrative",
+    "conformance_language_policy_ack"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string", "minLength": 1 },
+    "id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "wsg_version": { "type": "string", "minLength": 1 },
+    "star_version": { "type": "string", "minLength": 1 },
+    "created": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T" },
+    "last_updated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T" },
+    "status": { "type": "string", "enum": ["draft", "in-review", "final", "reopened"] },
+    "subject": {
+      "type": "object",
+      "required": ["name", "type", "organization", "urls"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "enum": ["website", "application", "digital-service", "digital-estate"] },
+        "organization": { "type": "string", "minLength": 1 },
+        "urls": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
+    "evaluator": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "organization": { "type": ["string", "null"] },
+        "contact": { "type": ["string", "null"] }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["domains", "urls", "sitemaps", "user_journeys", "languages", "devices", "browsers", "exclusions", "time_period"],
+      "additionalProperties": false,
+      "properties": {
+        "domains": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "urls": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "sitemaps": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "user_journeys": { "type": "array", "items": { "type": "string" } },
+        "languages": { "type": "array", "items": { "type": "string" } },
+        "devices": { "type": "array", "items": { "type": "string" } },
+        "browsers": { "type": "array", "items": { "type": "string" } },
+        "exclusions": { "type": "array", "items": { "type": "string" } },
+        "time_period": {
+          "type": "object",
+          "required": ["start", "end"],
+          "additionalProperties": false,
+          "properties": {
+            "start": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+            "end": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+          }
+        }
+      }
+    },
+    "methodology": {
+      "type": "object",
+      "required": ["description", "tools_used", "automated_coverage_note", "manual_coverage_note", "organizational_evidence_note"],
+      "additionalProperties": false,
+      "properties": {
+        "description": { "type": "string", "minLength": 1 },
+        "tools_used": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "version", "role"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string", "minLength": 1 },
+              "version": { "type": "string", "minLength": 1 },
+              "role": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "automated_coverage_note": { "type": "string" },
+        "manual_coverage_note": { "type": "string" },
+        "organizational_evidence_note": { "type": "string" }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "finding.schema.json" }
+    },
+    "summaries": {
+      "description": "Computed roll-ups (by_guideline, by_section, ppp). Never hand-entered; enforcing this is the renderer's responsibility, not the schema's.",
+      "type": "object"
+    },
+    "narrative": {
+      "type": "object",
+      "required": ["top_risks", "top_opportunities", "unresolved_questions", "required_follow_up", "remediation_roadmap"],
+      "additionalProperties": false,
+      "properties": {
+        "top_risks": { "type": "array", "items": { "type": "string" } },
+        "top_opportunities": { "type": "array", "items": { "type": "string" } },
+        "unresolved_questions": { "type": "array", "items": { "type": "string" } },
+        "required_follow_up": { "type": "array", "items": { "type": "string" } },
+        "remediation_roadmap": { "type": "string" }
+      }
+    },
+    "conformance_language_policy_ack": {
+      "description": "The renderer refuses to emit a report without this acknowledgement (GOVERNANCE.md conformance language policy).",
+      "type": "boolean",
+      "const": true
+    }
+  }
+}

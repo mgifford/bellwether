@@ -1,6 +1,11 @@
 # DRAFT data model for the WSG Evaluation Report Tool
-# Status: draft-1. To be emitted as JSON Schema (report-schema.json,
-# finding-schema.json, evidence-schema.json) once approved.
+# Status: implemented per spec-002. Real JSON Schema files now exist:
+# report.schema.json, finding.schema.json, evidence.schema.json,
+# automated-check-map-entry.schema.json. This file remains as human-readable
+# design notes; the schema files are authoritative. One correction made
+# during translation: the wsg_ref example below ("UX11-2") predates the
+# positional ID format from spec-001 (e.g. "2.1.1"); the real schemas use
+# the positional format.
 # Design notes:
 #   - Findings attach to WSG Success Criteria, not guidelines. Guideline,
 #     section, and full-spec summaries are computed roll-ups per WSG 1.4.
